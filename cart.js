@@ -1,6 +1,11 @@
 const apiUrl = 'https://vue3-course-api.hexschool.io/v2';
 const apiPath = 'zhang-hexschool';
 
+//veevalidate 加入全部規則。defineRule 是定義規則
+Object.keys(VeeValidateRules).forEach((rule) => {
+  VeeValidate.defineRule(rule, VeeValidateRules[rule]);
+});
+
 // 定義規則時會使用的 rules
 VeeValidate.defineRule('required', required); // ('自己命名的')
 VeeValidate.defineRule('email', email);
